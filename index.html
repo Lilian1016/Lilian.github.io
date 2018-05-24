@@ -1,125 +1,101 @@
 <html>
 <head>
-<title>主頁</title>
+<title>攝護腺癌</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-<style type="text/css">
+ <style type="text/css">
         *{
-            margin:0;
-            padding: 0;
-        }
-        ul{
+        margin: 0;
+        padding: 0;
+       }
+       #main{
+        margin-left: 20px;
+       }
+        #libox{
             list-style: none;
+            display: block;
+            padding-left: 5px;
         }
-        #main{
-            width: 651px;
-            height: 270px;
-            border:1px solid #000;
+        #libox li{
             position: relative;
-        }
-        #main #two li{
-            /*position: absolute;*/
-            width: 651px;
-            height: 270px;
-            display: none;
-        }
-        #main #one{
-            position: absolute;
-            right: 5px;
-            bottom: 5px;
-        }
-        #main #one li{
             float: left;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            color: #fff;
-            font-weight: 800;
-            border-radius: 15px;
-            background-color: orange;
-            margin: 0 5px;
+            margin: 10px;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-bottom: none;
         }
 
+        #libox li:hover{
+            cursor: pointer;
+        }
+       .licontent{
+        position: absolute;
+        display: block;
+        width: 280px;
+        height: 150px;
+        padding: 5px;
+        line-height: 30px;
+        top: 48px;
+        border: 1px solid #ccc;
+        border-top: 2px  solid red;
+       }
+       #libox li.active{
+        border-top: 2px solid red;
+        background: #fff;
+        z-index: 999;
+       }
+        #tab2,#tab3{
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <div id="main">
-        <!-- 功能区域 -->
-        <ul id="one">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-        <!-- 轮播图区域 -->
-        <ul id="two">
-            <li style="display:block"><img src="./images/1.jpg" alt=""></li>
-            <li><img src="./images/2.jpg" alt=""></li>
-            <li><img src="./images/3.jpg" alt=""></li>
-            <li><img src="./images/4.jpg" alt=""></li>
-        </ul>
+<div id="main">
+<!-- HTML页面布局 -->
+    <ul id="libox">
+        <li class="active">房产</li>
+        <li>家居</li>
+        <li>二手房</li>
+    </ul>
+    <div class="licontent" id="tab1">
+        275万购昌平邻铁三居 总价20万买一居
+        200万内购五环三居 140万安家东三环
+        北京首现零首付楼盘 53万购东5环50平
+        京楼盘直降5000 中信府 公园楼王现房
     </div>
-
-    <script type="text/javascript">
-        //获取对象
-        var one=document.getElementById('one');
-        var two=document.getElementById('two');
-        //获取li对象
-        var oneLi=one.getElementsByTagName("li");
-        var twoLi=two.getElementsByTagName("li");
-
-        //设置定时器 
-        var timer=setInterval(fun,2000);
-        var a=0;//全局变量
-        var num=0;//关系变量
-        //循环添加鼠标事件
-        for (var i = 0; i < oneLi.length; i++) {
-            oneLi[i].onmouseover = function(){
-                // console.log(this.innerHTML);
-                num=this.innerHTML-1;//num保存着鼠标悬浮的那一项
-                //清空定时器
-                clearInterval(timer);
-
-                /*功能区切换颜色*/
-                //1. 初始化功能区的颜色
-                for (var i = 0; i < oneLi.length; i++) {
-                    oneLi[i].style.backgroundColor='orange';
-                }
-                this.style.backgroundColor='red';
-                for (var k = 0; k < twoLi.length; k++) {
-                    k==num?twoLi[num].style.display='block':twoLi[k].style.display='none';
-                }
-            }
-            oneLi[i].onmouseout=function(){
-                a=num;//当鼠标从圆圈上移开时，把num赋给a,这样才能从当前的位置继续轮播下去
-                console.log(a);
-                timer=null;//初始化
-                timer=setInterval(fun,2000);
-            }
-        }
-        function fun(){
-            /*遍历轮播图*/
-            for (var j = 0; j < twoLi.length; j++) {
-                if (j == a) {
-                    twoLi[a].style.display = 'block';
-                }else{
-                    twoLi[j].style.display = 'none';
-                }
-            }
-            /*遍历功能区*/
-            //全部重置
-            for (var i = 0; i < oneLi.length; i++) {
-                oneLi[i].style.backgroundColor='orange';
-            }
-            //单独设定
-            oneLi[a].style.backgroundColor='red';
-            a++;
-            if (a%oneLi.length==0) {
-                a=0;
-            }
-            // console.log(a);
-        }
-    </script>
+    <div class="licontent" id="tab2">
+        40平出租屋大改造 美少女的混搭小窝
+         经典清新简欧爱家 90平老房焕发新生
+         新中式的酷色温情 66平撞色活泼家居
+         瓷砖就像选好老婆 卫生间烟道的设计
+    </div>
+    <div class="licontent" id="tab3">
+        通州豪华3居260万 二环稀缺2居250w甩
+         西3环通透2居290万 130万2居限量抢购
+         黄城根小学学区仅260万 121平70万抛!
+         独家别墅280万 苏州桥2居优惠价248万
+     </div>
+ </div>
 </body>
+        <script type="text/javascript">
+               window.onload=function(){
+        var ul=document.getElementById("libox");
+        var divtabs=document.getElementsByClassName("licontent");
+        var lis=ul.getElementsByTagName("li");
+        for (var i = 0; i < lis.length; i++) {
+                lis[i].index=i;//将点击的项保存为lis[i]的一个属性index
+                lis[i].onclick=function(){
+                    //重置所有的效果
+                    for (var j = 0; j < divtabs.length; j++) {
+                        lis[j].className="";
+                        divtabs[j].style.display="none";
+                    }
+                    //为点击的项添加效果
+                this.className="active";
+                divtabs[this.index].style.display="block";
+            }
+        }
+    }
+
+    </script>
