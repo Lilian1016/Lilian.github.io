@@ -5,98 +5,62 @@
 </head>
 <body>
  <style type="text/css">
-        *{
-        margin: 0;
-        padding: 0;
-       }
-       #main{
-         float:center;
-       }
-        #libox{
-            list-style: none;
-            display: block;
-            padding-left: 5px;
-        }
-        #libox li{
-            position: relative;
-            float:right;
-            margin: 10px;
-            padding: 10px 15px;
-            border: 1px solid #ccc;
-            border-bottom: none;
-        }
+   .box1 {
+  background: #2db34a;
+  border-radius: 6px;
+  height: 95px;
+  width: 95px;
+  line-height: 95px;
+  text-align: center;
+  color: white;
+  font-size: 11px;
+  transition: 1s ease-in-out;
+}
 
-        #libox li:hover{
-            cursor: pointer;
-        }
-       .licontent{
+.box1:hover {
+  transform: scaleX(2);
+}
 
-        position: absolute;
-        display: block;
-        width: 900px;
-        height: 500px;
-        padding: 5px;
-        line-height: 30px;
-        top: 48px;
-        border: 1px solid #ccc;
-        border-top: 2px  solid red;
-       }
-       #libox li.active{
-        border-top: 2px solid red;
-        background: #fff;
-        z-index: 999;
-       }
-        #tab2,#tab3{
-            display: none;
-        }
-    </style>
-</head>
-<body>
-<div id="main">
-<!-- HTML页面布局 -->
-    <ul id="libox">
-        <li class="active">房产</li>
-        <li>家居</li>
-        <li>二手房</li>
-    </ul>
-    <div class="licontent" id="tab1">
-        275万购昌平邻铁三居 总价20万买一居
-        200万内购五环三居 140万安家东三环
-        北京首现零首付楼盘 53万购东5环50平
-        京楼盘直降5000 中信府 公园楼王现房
-    </div>
-    <div class="licontent" id="tab2">
-        40平出租屋大改造 美少女的混搭小窝
-         经典清新简欧爱家 90平老房焕发新生
-         新中式的酷色温情 66平撞色活泼家居
-         瓷砖就像选好老婆 卫生间烟道的设计
-    </div>
-    <div class="licontent" id="tab3">
-        通州豪华3居260万 二环稀缺2居250w甩
-         西3环通透2居290万 130万2居限量抢购
-         黄城根小学学区仅260万 121平70万抛!
-         独家别墅280万 苏州桥2居优惠价248万
-     </div>
- </div>
-</body>
-        <script type="text/javascript">
-               window.onload=function(){
-        var ul=document.getElementById("libox");
-        var divtabs=document.getElementsByClassName("licontent");
-        var lis=ul.getElementsByTagName("li");
-        for (var i = 0; i < lis.length; i++) {
-                lis[i].index=i;//将点击的项保存为lis[i]的一个属性index
-                lis[i].onclick=function(){
-                    //重置所有的效果
-                    for (var j = 0; j < divtabs.length; j++) {
-                        lis[j].className="";
-                        divtabs[j].style.display="none";
-                    }
-                    //为点击的项添加效果
-                this.className="active";
-                divtabs[this.index].style.display="block";
-            }
-        }
-    }
+.box2{
+  background: #2db34a;
+  border-radius: 6px;
+  height: 95px;
+  width: 95px;
+  line-height: 95px;
+  text-align: center;
+  color: white;
+  font-size: 11px;
+  transition: 1s ease-in-out;
+}
 
-    </script>
+.box2:hover {
+  transform: scaleY(0.5);
+}
+
+.box3 {
+  background: #2db34a;
+  border-radius: 6px;
+  height: 95px;
+  width: 95px;
+  line-height: 95px;
+  text-align: center;
+  color: white;
+  font-size: 11px;
+  transition: 1s ease-in-out;
+}
+
+.box3:hover {
+  transform: scale(2, 3);
+}
+ </style>
+<div style="margin-top:30px">
+  <div style="float:left; margin-left:30px" class="box1">
+    scaleX
+  </div>
+  <div style="float:left; margin-left:50px" class="box2">
+    scaleY
+  </div>
+  <div style="float:left; margin-left:50px" class="box3">
+    scale
+  </div>
+</div>
