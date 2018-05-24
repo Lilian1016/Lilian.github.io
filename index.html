@@ -27,11 +27,68 @@ background:url('http://i.epochtimes.com/assets/uploads/2014/07/1402250938302483-
 
 
 }
+	 .box1 {
+  background: #2db34a;
+  border-radius: 6px;
+  height: 95px;
+  width: 95px;
+  line-height: 95px;
+  text-align: center;
+  color: white;
+  font-size: 11px;
+  transition: 1s ease-in-out;
+}
+
+.box1:hover {
+  transform: rotate(180deg);
+}
+
+.box2{
+  background: #2db34a;
+  border-radius: 6px;
+  height: 95px;
+  width: 95px;
+  line-height: 95px;
+  text-align: center;
+  color: white;
+  font-size: 11px;
+  transition: 1s ease-in-out;
+}
+
+.box2:hover {
+  transform: rotate(-270deg);
+}
+
+.box3 {
+  background: #2db34a;
+  border-radius: 6px;
+  height: 95px;
+  width: 95px;
+  line-height: 95px;
+  text-align: center;
+  color: white;
+  font-size: 11px;
+  transition: 2s ease-in-out;
+}
+
+.box3:hover {
+  transform: rotate(900deg);
+}
 </style>
 	<div id="link"></div>
 <div id="container"></div>
   <div id="sidebody">
- 
+      <div style="margin-top:30px">
+  <div style="float:left; margin-left:30px" class="box1">
+    180deg
+  </div>
+  <div style="float:left; margin-left:50px" class="box2">
+    -270deg
+  </div>
+  <div style="float:left; margin-left:50px" class="box3">
+    900deg
+  </div>
+</div>
  </div>
  </body>
 </html>
